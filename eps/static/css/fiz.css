@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--color-darkblue);
+  background-image: linear-gradient(115deg,
+      rgba(58, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)),
+    url(https://c.pxhere.com/images/a9/e5/5728acae7439c3bbe19727312be1-1446005.jpg!d);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navbar {
+  padding: 15px;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.nav-item {
+  margin-left: 40px;
+  font-size: 1.1em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+
+
+form {
+  background: rgba(27, 27, 50, 0.8);
+  padding: 25px 30px;
+  border-radius: 20px;
+  width: 800px;
+  margin-top: 50px;
+}
+
+.form-item {
+  margin: 0 auto 20px auto;
+  padding: 20px;
+}
+
+.form-check {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-check-label {
+  margin-bottom: 5px;
+}
+
+.form-item>p {
+  font-size: 1.4em;
+}
+
+.btn {
+  width: 100%;
+}
