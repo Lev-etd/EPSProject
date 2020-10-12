@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'css/dbo-list.css' %}">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="{% url 'start-page' %}">Брокер ДБО</a>
+    <button class="navbar-toggler d-lgr-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'fiz' %}">Физ. лицо</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'yur' %}">Юр. лицо</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'corp' %}">Корпорации</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Мы подобрали несколько, наиболее подходящих для вас ДБО</h1>
+    <div class="dbo-list">
+      <div class="list-item">
+        <div class="row">
+          <img
+            src="https://static1.squarespace.com/static/572a1e9c62cd94796c56e4c7/572a226d1bbee074b56d423f/5ab2594e88251b93f8d6bd75/1521637713560/tinkoff-bank-general-logo-10.png?format=1500w"
+            class="logo">
+          <div class="list-benefits">
+            <div class="column">
+              <div class="benef">Преимущества:</div>
+              <div class="list-benefits-item">
+                <i class="fa fa-angle-double-right" aria-hidden="true"></i> Хорошая безопасность
+              </div>
+              <div class="list-benefits-item">
+                <i class="fa fa-angle-double-right" aria-hidden="true"></i> Небольшие процентные ставки по кредитам
+              </div>
+              <div class="list-benefits-item">
+                <i class="fa fa-angle-double-right" aria-hidden="true"></i> Наличие всех необходимых функций
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://kit.fontawesome.com/f1cf87f98e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

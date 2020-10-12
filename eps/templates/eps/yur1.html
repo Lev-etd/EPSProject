@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/yur1.css' %}">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="{% url 'start-page' %}">Брокер ДБО</a>
+    <button class="navbar-toggler d-lgr-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+   <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+       <li class="nav-item">
+          <a class="nav-link" href="{% url 'fiz' %}">Физ. лицо</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'yur' %}">Юр. лицо</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'corp' %}">Корпорации</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Выберите, какими критериями должны обладать ДБО</h1>
+    <form action="#">
+      <div class="form-item">
+        <p>Насколько вам важна безопасность? <span id="first-p">(1 - совсем не важна, 10 - очень важна)</span> </p>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label label-inline">
+            1 <input class="form-check-input" type="radio" name="security" value="security1">
+          </label>
+          <label class="form-check-label label-inline">
+            2 <input class="form-check-input" type="radio" name="security" value="security2">
+          </label>
+          <label class="form-check-label label-inline">
+            3 <input class="form-check-input" type="radio" name="security" value="security3">
+          </label>
+          <label class="form-check-label label-inline">
+            4 <input class="form-check-input" type="radio" name="security" value="security4">
+          </label>
+          <label class="form-check-label label-inline">
+            5 <input class="form-check-input" type="radio" name="security" value="security5">
+          </label>
+          <label class="form-check-label label-inline">
+            6 <input class="form-check-input" type="radio" name="security" value="security6">
+          </label>
+          <label class="form-check-label label-inline">
+            7 <input class="form-check-input" type="radio" name="security" value="security7">
+          </label>
+          <label class="form-check-label label-inline">
+            8 <input class="form-check-input" type="radio" name="security" value="security8">
+          </label>
+          <label class="form-check-label label-inline">
+            9 <input class="form-check-input" type="radio" name="security" value="security9">
+          </label>
+          <label class="form-check-label label-inline">
+            10 <input class="form-check-input" type="radio" name="security" value="security10">
+          </label>
+        </div>
+      </div>
+      <div class="form-item">
+        <p>Какие фунцкии ДБО вы считаете необходимыми?</p>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="bank-account" value="1">
+            Открытие и обслуживание счета
+          </label>
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="overdraft" value="1">
+            Овердрафт
+          </label>
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="deposit" value="1">
+            Депозиты
+          </label>
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="mobile-bank" value="1">
+            Наличие мобильного банка
+          </label>
+        </div>
+      </div>
+      <div class="form-item">
+        <p class="italic">Далее вам предлогается выбрать подходящий вам процент по разным кредитным линиям. Если
+          какой-либо вид
+          кредитования вам не нужен, то оставьте поля для выбора пустыми</p>
+      </div>
+      <div class="form-item">
+        <p>Оборотный кредит</p>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="revolving" value="8">
+            8-10%
+          </label>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="revolving" value="11">
+            11-13%
+          </label>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="revolving" value="14">
+            14-15%
+          </label>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="revolving" value="21">
+            Более 15%
+          </label>
+        </div>
+      </div>
+      <div class="form-item">
+        <p>Кредитная линия под контракт</p>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-contract" value="8">
+            8-10%
+          </label>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-contract" value="11">
+            11-13%
+          </label>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-contract" value="14">
+            14-16%
+          </label>
+        </div>
+      </div>
+      <div class="form-item">
+        <p>Оборотная кредитная линия под залог недвижимости</p>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-prop" value="8">
+            8-9%
+          </label>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-prop" value="10">
+            10-11%
+          </label>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-prop" value="12">
+            Более 12%
+          </label>
+        </div>
+      </div>
+      <div class="form-item">
+        <p>Инвестиционная кредитная линия</p>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-invest" value="8">
+            8-9%
+          </label>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-invest" value="10">
+            10-11%
+          </label>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-invest" value="12">
+            Более 12%
+          </label>
+        </div>
+      </div>
+      <div class="form-item">
+        <p>Кредит для ИП на любые цели</p>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-any-reason" value="8">
+            8-9%
+          </label>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-any-reason" value="10">
+            10%
+          </label>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-any-reason" value="11">
+            11%
+          </label>
+        </div>
+      </div>
+      <div class="form-item">
+        <p>Кредит для ИП под залог недвижимости</p>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-IE-prop" value="8">
+            8-9%
+          </label>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-IE-prop" value="10">
+            10%
+          </label>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="percent-IE-prop" value="11">
+            11%
+          </label>
+        </div>
+      </div>
+      <div class="form-item">
+        <button type="submit" class="btn btn-primary">Подтвердить</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
