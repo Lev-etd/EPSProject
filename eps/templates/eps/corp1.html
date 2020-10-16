@@ -2,113 +2,61 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/corp1.css' %}">
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/corp1.css' %}">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
     <a class="navbar-brand" href="{% url 'start-page' %}">Брокер ДБО</a>
     <button class="navbar-toggler d-lgr-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'fiz' %}">Физ. лицо</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'yur' %}">Юр. лицо</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="{% url 'corp' %}">Корпорации</a>
-        </li>
-      </ul>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'fiz' %}">Физ. лицо</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'yur' %}">Юр. лицо</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'corp' %}">Корпорации</a>
+            </li>
+        </ul>
     </div>
-  </nav>
-  <div class="container">
+</nav>
+<div class="container">
     <h1>Выберите, какими критериями должны обладать ДБО</h1>
-    <form action="{% url 'dbo_list' %}" method="POST">
+    <form action="{% url 'dbo_list_corp' %}" method="POST">
         {% csrf_token %}
-      <div class="form-item">
-        <p>Насколько вам важна безопасность? <span id="first-p">(1 - совсем не важна, 10 - очень важна)</span> </p>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label label-inline">
-            1 <input class="form-check-input" type="radio" name="security" value="security1">
-          </label>
-          <label class="form-check-label label-inline">
-            2 <input class="form-check-input" type="radio" name="security" value="security2">
-          </label>
-          <label class="form-check-label label-inline">
-            3 <input class="form-check-input" type="radio" name="security" value="security3">
-          </label>
-          <label class="form-check-label label-inline">
-            4 <input class="form-check-input" type="radio" name="security" value="security4">
-          </label>
-          <label class="form-check-label label-inline">
-            5 <input class="form-check-input" type="radio" name="security" value="security5">
-          </label>
-          <label class="form-check-label label-inline">
-            6 <input class="form-check-input" type="radio" name="security" value="security6">
-          </label>
-          <label class="form-check-label label-inline">
-            7 <input class="form-check-input" type="radio" name="security" value="security7">
-          </label>
-          <label class="form-check-label label-inline">
-            8 <input class="form-check-input" type="radio" name="security" value="security8">
-          </label>
-          <label class="form-check-label label-inline">
-            9 <input class="form-check-input" type="radio" name="security" value="security9">
-          </label>
-          <label class="form-check-label label-inline">
-            10 <input class="form-check-input" type="radio" name="security" value="security10">
-          </label>
+        <div class="form-item">
+            <p>Насколько вам важна безопасность? <span id="first-p">(1 - совсем не важна, 10 - очень важна)</span></p>
+            <div class="form-check form-check-inline">
+                {% for i in fizrad %}
+                    {{ i }}
+                {% endfor %}
+            </div>
         </div>
-      </div>
-      <div class="form-item">
-        <p>Какие фунцкии ДБО вы считаете необходимыми?</p>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="bank-account" value="1">
-            Открытие и обслуживание счета
-          </label>
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="overdraft" value="1">
-            Овердрафт
-          </label>
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="express-credit" value="1">
-            Экспресс кредит
-          </label>
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="funds-in-bank" value="1">
-            Возможность размещения средств в интернет банке
-          </label>
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="salary-project" value="1">
-            Наличие зарплатного проекта
-          </label>
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="deposit" value="1">
-            Депозиты
-          </label>
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="internet-bank" value="1">
-            Наличие интернет приложения
-          </label>
+        <div class="form-item">
+            <p>Какие фунцкии ДБО вы считаете необходимыми?</p>
+             <div class="form-check form-check-inline">
+                {% for i in bfuncyur %}
+                    {{ i }}
+                {% endfor %}
+            </div>
         </div>
-      </div>
-      <div class="form-item">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
+        <div class="form-item">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </form>
-  </div>
+</div>
 </body>
 
 </html>

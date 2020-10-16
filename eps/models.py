@@ -57,11 +57,9 @@ class Bank_corp(models.Model):
     SalProj = models.BooleanField(max_length=100)
     Deposits = models.BooleanField(max_length=100)
     WebApp = models.BooleanField(max_length=100)
-    security = models.CharField(max_length=100)
+    Security = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
 
-class Form(forms.Form):
-    form1 = forms.RadioSelect()
